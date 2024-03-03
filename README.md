@@ -32,7 +32,7 @@ Real-time updates to the game board as players take their turns.<br />
 Detection of game-winning moves and declaration of the winner.<br />
 A reset feature to start a new game once a game concludes.
 ## Contributing
-### Contributions are welcome! Please feel free to submit a pull request or create an issue for any bugs, enhancements, or feature requests.
+Contributions are welcome! Please feel free to submit a pull request or create an issue for any bugs, enhancements, or feature requests.
 
 ## License
 This project is open source and available under the MIT License.
