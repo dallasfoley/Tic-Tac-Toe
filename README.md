@@ -11,7 +11,7 @@ npm install
 ## Usage
 After installing the dependencies, you can start the application by running:
 
-## bash
+bash
 Copy code
 npm start
 This will start the React development server and open the game in your default web browser. The game will be available at http://localhost:3000.
@@ -28,7 +28,7 @@ The game consists of three main components:
 ### Board: Manages the game state and renders the 3x3 game board.
 ### BoardRow: Renders a row of the game board.
 ### Square: Renders a single square on the game board, which can be clicked by the players.
-### Features
+## Features
 ### Real-time updates to the game board as players take their turns.
 ### Detection of game-winning moves and declaration of the winner.
 ### A reset feature to start a new game once a game concludes.
