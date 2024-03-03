@@ -10,7 +10,7 @@ npm install<br />
 ## Usage
 After installing the dependencies, you can start the application by running:<br />
 
-bash<br />
+## bash
 
 npm start<br />
 This will start the React development server and open the game in your default web browser. The game will be available at http://
@@ -28,11 +28,11 @@ The game consists of three main components:
 ### BoardRow: Renders a row of the game board.
 ### Square: Renders a single square on the game board, which can be clicked by the players.
 ## Features
-### Real-time updates to the game board as players take their turns.
-### Detection of game-winning moves and declaration of the winner.
-### A reset feature to start a new game once a game concludes.
-### Contributing
+Real-time updates to the game board as players take their turns.<br />
+Detection of game-winning moves and declaration of the winner.<br />
+A reset feature to start a new game once a game concludes.
+## Contributing
 ### Contributions are welcome! Please feel free to submit a pull request or create an issue for any bugs, enhancements, or feature requests.
 
 ## License
-## This project is open source and available under the MIT License.
+This project is open source and available under the MIT License.
