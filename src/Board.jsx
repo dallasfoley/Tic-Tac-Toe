@@ -68,7 +68,9 @@ function Board() {
       <BoardRow squares={squares} i={0} handleClick={handleClick} />
       <BoardRow squares={squares} i={3} handleClick={handleClick} />
       <BoardRow squares={squares} i={6} handleClick={handleClick} />
-      <button onClick={reset}>Reset</button>
+      <button className="reset" onClick={reset}>
+        Reset
+      </button>
     </>
   );
 }
