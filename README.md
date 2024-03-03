@@ -5,23 +5,22 @@ This project is a simple implementation of the classic game Tic-Tac-Toe built wi
 To run this project locally, you'll need to have Node.js installed on your computer. After cloning or downloading the project, navigate to the project directory and install the necessary dependencies:
 
 ## bash
-Copy code
-cd path-to-your-project
-npm install
+cd path-to-your-project<br />
+npm install<br />
 ## Usage
-After installing the dependencies, you can start the application by running:
+After installing the dependencies, you can start the application by running:<br />
 
-bash
-Copy code
-npm start
-This will start the React development server and open the game in your default web browser. The game will be available at http://localhost:3000.
+bash<br />
+
+npm start<br />
+This will start the React development server and open the game in your default web browser. The game will be available at http://
 
 ## How to Play
-The game board consists of a 3x3 grid.
-Players take turns clicking on a square to place their X or O mark.
-The first player to get three of their marks in a row (up, down, across, or diagonally) is the winner.
-If all nine squares are filled and no player has three marks in a row, the game is declared a tie.
-You can restart the game at any time by clicking the "Reset" button.
+The game board consists of a 3x3 grid.<br />
+Players take turns clicking on a square to place their X or O mark.<br />
+The first player to get three of their marks in a row (up, down, across, or diagonally) is the winner.<br />
+If all nine squares are filled and no player has three marks in a row, the game is declared a tie.<br />
+You can restart the game at any time by clicking the "Reset" button.<br />
 ## Components
 The game consists of three main components:
 
