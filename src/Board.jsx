@@ -1,34 +1,18 @@
 import { useState } from "react";
 import BoardRow from "./BoardRow";
 
-function Board() {
+export default function Board() {
   const [squares, setSquares] = useState(Array(9).fill(""));
-  const [xIsNext, setXIsNext] = useState(true);
-  const [count, setCount] = useState(0);
-  const [status, setStatus] = useState("Next player: X");
+  const [nextPlayer, setNextPlayer] = useState("X");
+  const isFull = squares.filter((val) => val !== "").length >= 9;
+  const hasWinner = calculateWinner(squares);
 
   const handleClick = (i) => {
-    console.log(count, xIsNext, calculateWinner(squares));
-    if (squares[i] || calculateWinner(squares)) {
+    if (squares[i] || isFull || hasWinner) {
       return;
     }
-    const nextSquares = squares.slice();
-
-    nextSquares[i] = xIsNext ? "X" : "O";
-    setSquares(nextSquares);
-    setXIsNext(!xIsNext);
-    setCount(count + 1);
-    const winner = calculateWinner(nextSquares);
-    if (winner) {
-      setStatus("Winner: " + winner);
-    } else if (count >= 8) {
-      // Check if the board is full
-      setStatus("Tie Game");
-    } else {
-      // Switch the player if no winner or tie
-      setXIsNext(!xIsNext);
-      setStatus("Next player: " + (!xIsNext ? "X" : "O"));
-    }
+    setSquares([...squares.slice(0, i), nextPlayer, ...squares.slice(i + 1)]);
+    setNextPlayer(nextPlayer === "X" ? "O" : "X");
   };
 
   function calculateWinner(squares) {
@@ -57,22 +41,29 @@ function Board() {
 
   const reset = () => {
     setSquares(Array(9).fill(""));
-    setXIsNext(true);
-    setCount(0);
-    setStatus("Next player: " + (!xIsNext ? "X" : "O"));
+    setNextPlayer("X");
   };
 
   return (
     <>
-      <div className="status">{status}</div>
-      <BoardRow squares={squares} i={0} handleClick={handleClick} />
-      <BoardRow squares={squares} i={3} handleClick={handleClick} />
-      <BoardRow squares={squares} i={6} handleClick={handleClick} />
+      <p className="status">
+        {hasWinner
+          ? `Winner: ${hasWinner}`
+          : isFull
+            ? "Tie!"
+            : `Next Player: ${nextPlayer}`}
+      </p>
+      {[0, 3, 6].map((val) => (
+        <BoardRow
+          key={val}
+          squares={squares}
+          i={val}
+          handleClick={handleClick}
+        />
+      ))}
       <button className="reset" onClick={reset}>
         Reset
       </button>
     </>
   );
 }
-
-export default Board;
